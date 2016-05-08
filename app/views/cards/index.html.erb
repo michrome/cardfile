@@ -1,0 +1,31 @@
+<h1 id="top">Listing <%= @cards.size %> cards</h1>
+
+<%= form_tag cards_path, :method => 'get' do %>
+	<p>
+		<%= text_field_tag :search, params[ :search ] %>
+		<%= submit_tag "Search", :name => nil %>
+		<%= link_to "Clear", cards_path %>
+	</p>
+<% end %>
+
+<%= link_to 'New card', new_card_path %>
+
+<div style="margin: 1em 0 1em 0; padding: 0.5em; background-color: #dddddd; ">
+<% @card_letters.keys.sort.each{ | letter | %><%= link_to( letter, '#'+letter, :style => 'padding: 0 1em 0 1em; font-size: 1.1em;' ) %><% } %>
+</div>
+
+
+
+<% @card_letters.keys.sort.each do | letter | %>
+<h2 style="display: inline;" id="<%= letter -%>"><%= letter %></h2>
+<p style="display: inline;"><%= link_to( '^ Back to top', '#top', :style => 'color: #999999;' ) %></p>
+<table style="padding-bottom: 2em;">
+<% for card in @card_letters[ letter ] %>
+  <tr>
+    <td><%= link_to card.title, edit_card_path(card) %></td>
+    <td style="padding-left: 5%;"><%= link_to 'Delete', card, :confirm => "Are you sure you want to delete:\n\n#{ card.title }\n\n?", :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>
+
