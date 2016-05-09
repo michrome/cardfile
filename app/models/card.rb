@@ -1,14 +1,12 @@
 class Card < ActiveRecord::Base
 
-    def self.search( search )
-      if search
-        find( :all,
-              :order => "title",
-              :conditions => [ 'title LIKE ? OR body LIKE ?', "%#{ search }%", "%#{ search }%" ]
-              )
-      else
-        self.order(:title)
-      end
+  def self.search(search)
+    puts search
+    if search
+      self.where("to_tsvector(title || ' ' || body) @@ to_tsquery(?)", search).order(:title)
+    else
+      self.order(:title)
     end
+  end
 
 end

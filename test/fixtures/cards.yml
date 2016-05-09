@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+leylor:
+  title: Leylor (toyota Rav 4 1.8 HJ03 YZL)
+  body: \"15/08/2011 Annual service,MOT 8688\\r\\n23/04 2012 Re-con gearbox and clutch\n    assembly 8836\\r\\n26/10/12\\r\\n29/10/2015 Oil & filter,tyre,MOT 9552\"
+
+beeson:
+  title: Beeson (Toyota Yaris 1.0 LA04 SMX)
+  body: \"24/01/2005 Annual service 6615\\r\\n11/01/2006 Annual service 6953\\r\\n31/08/2006\n    Annual service,gas strut,mirror 7182\\r\\n06/09/2007 Annual service,MOT 7562\\r\\n29/08/2008\n    Annual service,minor list,MOT 7878\\r\\n03/08/2009 F/serv,battery,disc pads,MOT\n    8150A\\r\\n17/11/2009 Two tyres 8222A\\r\\n30/07/2010 F/serv,MOT 8410A\\r\\n06/07/2011\n    F/serv,MOT 8664A\\r\\n23/07/2012 F/serv,horn,MOT 8882A\\r\\n24/07/2013 F/serv,washers,MOT\n    9097A\\r\\n21/07/2014 F/serv,MOT 9297A\\r\\n01/09/2014 N/s mirror 9326A\\r\\n15/07/2015\n    F/serv,MOT 9500\"
