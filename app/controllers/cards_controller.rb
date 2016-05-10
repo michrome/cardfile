@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate
+  http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD']
 
   # GET /cards
   # GET /cards.json
@@ -64,21 +64,13 @@ class CardsController < ApplicationController
   end
 
   private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_card
-    @card = Card.find(params[:id])
-  end
-
-  # Never trust parameters from the scary internet, only allow the white list through.
-  def card_params
-    params.require(:card).permit(:title, :body)
-  end
-
-  def authenticate
-    unless params['authenticate_token'].eql?(ENV['AUTHENTICATE_TOKEN'])
-      authenticate_or_request_with_http_basic do |user, password|
-        user == ENV['USERNAME'] && password == ENV['PASSWORD']
-      end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_card
+      @card = Card.find(params[:id])
     end
-  end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def card_params
+      params.require(:card).permit(:title, :body)
+    end
 end
