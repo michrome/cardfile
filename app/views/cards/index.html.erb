@@ -23,7 +23,7 @@
 <% for card in @card_letters[ letter ] %>
   <tr>
     <td><%= link_to card.title, edit_card_path(card) %></td>
-    <td style="padding-left: 5%;"><%= link_to 'Delete', card, :confirm => "Are you sure you want to delete:\n\n#{ card.title }\n\n?", :method => :delete %></td>
+    <td style="padding-left: 5%;"><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

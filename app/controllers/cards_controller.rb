@@ -1,5 +1,5 @@
 class CardsController < ApplicationController
-  before_action :set_card, only: [:show, :edit, :update, :destroy]
+  before_action :set_card, only: [:edit, :update, :destroy]
   http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD']
 
   # GET /cards
@@ -7,11 +7,6 @@ class CardsController < ApplicationController
   def index
     @cards = Card.search(params[:search])
     @card_letters = @cards.group_by { |card| card.title[0..0] }
-  end
-
-  # GET /cards/1
-  # GET /cards/1.json
-  def show
   end
 
   # GET /cards/new
@@ -30,7 +25,7 @@ class CardsController < ApplicationController
 
     respond_to do |format|
       if @card.save
-        format.html { redirect_to @card, notice: 'Card was successfully created.' }
+        format.html { redirect_to cards_url, notice: 'Card was successfully created.' }
         format.json { render :show, status: :created, location: @card }
       else
         format.html { render :new }
@@ -44,7 +39,7 @@ class CardsController < ApplicationController
   def update
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to @card, notice: 'Card was successfully updated.' }
+        format.html { redirect_to cards_url, notice: 'Card was successfully updated.' }
         format.json { render :show, status: :ok, location: @card }
       else
         format.html { render :edit }
