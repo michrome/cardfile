@@ -1,79 +1,77 @@
-body { background-color: #fff; color: #333; }
-
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+body {
+  width: 40rem;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: #222;
 }
-
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
-
-a { color: #000; text-decoration: none; }
-a:visited { color: #000; text-decoration: none; }
-a:hover { color: #fff; background-color:#000; }
-
-.fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
-}
-
-#errorExplanation {
-  width: 400px;
-  border: 2px solid red;
-  padding: 7px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
-}
-
-#errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: -7px;
-  background-color: #c00;
-  color: #fff;
-}
-
-#errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 5px;
-}
-
-#errorExplanation ul li {
-  font-size: 12px;
-  list-style: square;
-}
-
-div.uploadStatus {
-  margin: 5px;
-}
-
-div.progressBar {
-  margin: 5px;
-}
-
-div.progressBar div.border {
-  background-color: #fff;
-  border: 1px solid gray;
+table {
   width: 100%;
 }
-
-div.progressBar div.background {
-  background-color: #333;
-  height: 18px;
-  width: 0%;
+.pure-table {
+  /*border: 0;*/
+  border-right: 0;
+  border-left: 0;
 }
-
-tr td {
-	padding-top: 1%;
-	padding-bottom: 1%;
+tr {
+  height: 3.2em;
 }
-
+tr.divider {
+  height: 100%;
+  background-color: #f2f2f2;
+}
+tr.divider:target td{
+  padding-top: calc(6rem + 0.3em);
+}
+tr.divider td {
+  border-bottom: 0;
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+}
+tr:hover {
+  /*background-color: white;*/
+}
+nav {
+  /*background-color: red;*/
+}
+main {
+  /*background-color: yellow;*/
+  margin-top: 6rem;
+}
+header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+ol {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0;
+  max-width: 50rem;
+  /*background-color: green;*/
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#search_and_new {
+  display: flex;
+  /*background-color: green;*/
+  max-width: 50rem;
+  width: 100%;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+a, a:visited, a:hover, a:active {
+    color: #0078e7;
+    text-decoration: none;
+  }

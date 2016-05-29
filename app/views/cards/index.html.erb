@@ -1,31 +1,66 @@
+<header>
+  <div id="search_and_new">
+    <a class="pure-button" href="">New</a>
+    <%= form_tag cards_path, method: 'get', class: 'pure-form' do %>
+      <%= search_field_tag :search, params[ :search ] %>
+      <%= submit_tag 'Search', name: nil, class: 'pure-button pure-button-primary' %>
+      <%= link_to 'Clear', cards_path, class: 'pure-button' %>
+    <% end %>
+  </div>
+  <nav>
+    <ol>
+      <% @card_letters.keys.sort.each do | letter | %>
+        <li>
+          <%= link_to(letter, '#'+letter, class: 'letter') %>
+        </li>
+      <% end %>
+    </ol>
+  </nav>
+</header>
+<main>
+  <table class="pure-table-horizontal pure-table">
+    <thead></thead>
+    <tbody>
+      <% @card_letters.keys.sort.each do | letter | %>
+        <tr class="divider" id="<%= letter %>">
+          <td><strong><%= letter %></strong></td>
+        </tr>
+        <% for card in @card_letters[ letter ] %>
+          <tr><td><%= card.title %></td></tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</main>
+<!--
 <h1 id="top">Listing <%= @cards.size %> cards</h1>
 
 <%= form_tag cards_path, :method => 'get' do %>
-	<p>
-		<%= text_field_tag :search, params[ :search ] %>
-		<%= submit_tag "Search", :name => nil %>
-		<%= link_to "Clear", cards_path %>
-	</p>
+  <p>
+    <%= text_field_tag :search, params[ :search ] %>
+    <%= submit_tag "Search", :name => nil %>
+    <%= link_to "Clear", cards_path %>
+  </p>
 <% end %>
 
 <%= link_to 'New card', new_card_path %>
 
 <div style="margin: 1em 0 1em 0; padding: 0.5em; background-color: #dddddd; ">
-<% @card_letters.keys.sort.each{ | letter | %><%= link_to( letter, '#'+letter, :style => 'padding: 0 1em 0 1em; font-size: 1.1em;' ) %><% } %>
+  <% @card_letters.keys.sort.each{ | letter | %><%= link_to( letter, '#'+letter, :style => 'padding: 0 1em 0 1em; font-size: 1.1em;' ) %><% } %>
 </div>
 
 
 
 <% @card_letters.keys.sort.each do | letter | %>
-<h2 style="display: inline;" id="<%= letter -%>"><%= letter %></h2>
-<p style="display: inline;"><%= link_to( '^ Back to top', '#top', :style => 'color: #999999;' ) %></p>
-<table style="padding-bottom: 2em;">
-<% for card in @card_letters[ letter ] %>
-  <tr>
-    <td><%= link_to card.title, edit_card_path(card) %></td>
-    <td style="padding-left: 5%;"><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <h2 style="display: inline;" id="<%= letter -%>"><%= letter %></h2>
+  <p style="display: inline;"><%= link_to( '^ Back to top', '#top', :style => 'color: #999999;' ) %></p>
+  <table style="padding-bottom: 2em;">
+    <% for card in @card_letters[ letter ] %>
+      <tr>
+        <td><%= link_to card.title, edit_card_path(card) %></td>
+        <td style="padding-left: 5%;"><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </table>
 <% end %>
-</table>
-<% end %>
-
+-->
