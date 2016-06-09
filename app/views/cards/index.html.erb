@@ -1,11 +1,11 @@
 <header>
   <div id="search_and_new">
-    <a class="pure-button" href="">New</a>
     <%= form_tag cards_path, method: 'get', class: 'pure-form' do %>
       <%= search_field_tag :search, params[ :search ] %>
       <%= submit_tag 'Search', name: nil, class: 'pure-button pure-button-primary' %>
       <%= link_to 'Clear', cards_path, class: 'pure-button' %>
     <% end %>
+    <a class="pure-button" href="">New</a>
   </div>
   <nav>
     <ol>
@@ -26,7 +26,7 @@
           <td><strong><%= letter %></strong></td>
         </tr>
         <% for card in @card_letters[ letter ] %>
-          <tr><td><%= card.title %></td></tr>
+          <tr><td><%= link_to card.title, edit_card_path(card) %></td></tr>
         <% end %>
       <% end %>
     </tbody>
