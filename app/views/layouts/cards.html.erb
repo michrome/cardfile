@@ -7,6 +7,17 @@
     <title>Cards: <%= controller.action_name %></title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Google Analytics -->
+    <% if ENV['GOOGLE_ANALYTICS'] %>
+      <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', '<%= ENV['GOOGLE_ANALYTICS'] %>', 'auto');
+        ga('send', 'pageview');
+      </script>
+      <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <% end %>
+    <!-- End Google Analytics -->
   </head>
   <body>
     <p style="color: green"><%= flash[:notice] %></p>

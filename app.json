@@ -1,0 +1,46 @@
+{
+  "name": "cardfile",
+  "scripts": {},
+  "env": {
+    "LANG": {
+      "required": true
+    },
+    "PASSWORD": {
+      "generator": "secret"
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_LOG_TO_STDOUT": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "generator": "secret"
+    },
+    "USERNAME": {
+      "generator": "secret"
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "addons": [
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
+}
