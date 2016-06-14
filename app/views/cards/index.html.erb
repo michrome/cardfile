@@ -5,7 +5,7 @@
       <%= submit_tag 'Search', name: nil, class: 'pure-button pure-button-primary' %>
       <%= link_to 'Clear', cards_path, class: 'pure-button' %>
     <% end %>
-    <a class="pure-button" href="">New</a>
+    <%= link_to 'New', new_card_path, class: 'pure-button' %>
   </div>
   <nav>
     <ol>
