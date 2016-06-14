@@ -37,6 +37,7 @@ nav {
 main {
   /*background-color: yellow;*/
   margin-top: 6rem;
+  margin-bottom: 100%; /* Required to ensure active anchor links hit the top of the viewport */
 }
 header {
   background-color: white;
