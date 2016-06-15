@@ -82,3 +82,14 @@ a.letter, a.letter:visited {
 .title {
   font-size: 150%;
 }
+#body_for_print {
+  display: none;
+}
+@media print {
+  textarea {
+    display: none !important;
+  }
+  #body_for_print {
+    display: block;
+  }
+}

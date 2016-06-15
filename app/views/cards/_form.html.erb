@@ -22,6 +22,9 @@
       class: 'pure-input-1',
       placeholder: 'Body',
       autofocus: !(f.object.new_record?) %>
+    <div id="body_for_print">
+      <%= simple_format f.object.body %>
+    </div>
   </fieldset>
   <%= f.submit 'Save', class: 'pure-button pure-button-primary' %>
   <a href="javascript:history.back()" class="pure-button">Cancel</a>
