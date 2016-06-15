@@ -14,18 +14,26 @@
     <%= f.text_field :title,
       class: 'pure-input-1 title',
       placeholder: 'Title',
-      autofocus: f.object.new_record? %>
+      autofocus: card.new_record? %>
   </fieldset>
   <fieldset class="pure-group">
     <%= f.text_area :body,
       rows: 20,
       class: 'pure-input-1',
       placeholder: 'Body',
-      autofocus: !(f.object.new_record?) %>
+      autofocus: !(card.new_record?) %>
     <div id="body_for_print">
       <%= simple_format f.object.body %>
     </div>
   </fieldset>
-  <%= f.submit 'Save', class: 'pure-button pure-button-primary' %>
-  <a href="javascript:history.back()" class="pure-button">Cancel</a>
-<% end %>
+  <div class="margin-hanger">
+    <div>
+      <%= f.submit 'Save', class: 'pure-button pure-button-primary' %>
+      <a href="javascript:history.back()" class="pure-button">Cancel</a>
+    </div>
+    <% unless card.new_record? %>
+      <div>
+        <%= link_to 'Delete', card, method: :delete, data: { confirm: 'Are you sure?' }, class: 'pure-button warning' %>
+      </div>
+    <% end %>
+  <% end %>

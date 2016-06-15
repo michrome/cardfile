@@ -63,7 +63,7 @@ ol {
   margin-top: 0;
   margin-bottom: 0;
 }
-#search_and_new {
+.margin-hanger {
   display: flex;
   /*background-color: green;*/
   max-width: 45rem;
@@ -92,4 +92,8 @@ a.letter, a.letter:visited {
   #body_for_print {
     display: block;
   }
+}
+.warning {
+  color: white;
+  background: rgb(202, 60, 60);
 }
