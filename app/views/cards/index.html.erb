@@ -1,7 +1,7 @@
 <header>
   <div id="search_and_new">
     <%= form_tag cards_path, method: 'get', class: 'pure-form' do %>
-      <%= search_field_tag :search, params[ :search ] %>
+      <%= search_field_tag :search, params[ :search ], class: 'pure-input-rounded' %>
       <%= submit_tag 'Search', name: nil, class: 'pure-button pure-button-primary' %>
       <%= link_to 'Clear', cards_path, class: 'pure-button' %>
     <% end %>
