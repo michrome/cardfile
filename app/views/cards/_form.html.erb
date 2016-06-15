@@ -11,10 +11,17 @@
     </div>
   <% end %>
   <fieldset class="pure-group">
-    <%= f.text_field :title, class: 'pure-input-1', placeholder: 'Title' %>
+    <%= f.text_field :title,
+      class: 'pure-input-1',
+      placeholder: 'Title',
+      autofocus: f.object.new_record? %>
   </fieldset>
   <fieldset class="pure-group">
-    <%= f.text_area :body, rows: 20, class: 'pure-input-1', placeholder: 'Body' %>
+    <%= f.text_area :body,
+      rows: 20,
+      class: 'pure-input-1',
+      placeholder: 'Body',
+      autofocus: !(f.object.new_record?) %>
   </fieldset>
   <%= f.submit 'Save', class: 'pure-button pure-button-primary' %>
   <a href="javascript:history.back()" class="pure-button">Cancel</a>
