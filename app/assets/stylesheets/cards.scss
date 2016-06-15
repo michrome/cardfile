@@ -97,3 +97,11 @@ a.letter, a.letter:visited {
   color: white;
   background: rgb(202, 60, 60);
 }
+.flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: yellow;
+  font-size: larger;
+}
