@@ -73,9 +73,12 @@ ol {
   margin-right: auto;
 }
 a, a:visited {
-    color: black;
-    text-decoration: none;
-  }
+  color: black;
+  text-decoration: none;
+}
 a.letter, a.letter:visited {
-    color: blue;
-  }
+  color: blue;
+}
+.title {
+  font-size: 150%;
+}
