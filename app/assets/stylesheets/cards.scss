@@ -28,9 +28,6 @@ tr.divider td {
   padding-bottom: 0.2em;
   padding-top: 0.2em;
 }
-tr:hover {
-  /*background-color: white;*/
-}
 nav {
   /*background-color: red;*/
 }
@@ -75,6 +72,9 @@ ol {
 a, a:visited {
   color: black;
   text-decoration: none;
+}
+#cards-table a:hover{
+  text-decoration: underline;
 }
 a.letter, a.letter:visited {
   color: blue;
