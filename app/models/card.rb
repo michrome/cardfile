@@ -1,4 +1,5 @@
 class Card < ActiveRecord::Base
+  validates :title, presence: true
 
   def self.search(search)
     if search
