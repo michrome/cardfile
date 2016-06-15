@@ -104,4 +104,17 @@ a.letter, a.letter:visited {
   z-index: 1;
   background-color: yellow;
   font-size: larger;
+  animation-name: fadeout;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
